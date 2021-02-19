@@ -1,0 +1,21 @@
+footer {
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 50%;
+        margin: 5px auto;
+    }
+
+    img {
+        &.git {
+            width: 30px;
+        }
+        
+        &.rss {
+            width: 80px;
+        }
+    }
+}
+
