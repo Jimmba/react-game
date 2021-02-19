@@ -1,3 +1,8 @@
+@import './variables.scss';
+@import './header.scss';
+@import './footer.scss';
+@import './settings.scss';
+
 #root {
     margin: 0 auto;
     width: 100vw;
@@ -5,4 +10,43 @@
     background-image: url('../images/cover.jpg');
     background-size: cover;
     position: relative;
+}
+
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    
+    &.red {
+        @include transparentBackground($bg-red, 0.05)
+    }
+
+    &.green {
+        @include transparentBackground($bg-green, 0.05)
+    }
+
+    &.blue {
+        @include transparentBackground($bg-blue, 0.05)
+    }
+}
+
+header, footer {
+    width: 100%;
+    @include transparentBackground($bg-gray, 0.6);
+}
+
+header {
+    height: 50px;
+}
+
+footer {
+    position:fixed;
+    bottom:0;
+}
+
+button {
+    width: 100px;
+    height: 30px;
 }
