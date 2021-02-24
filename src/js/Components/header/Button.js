@@ -3,7 +3,6 @@ import React from 'react';
 export class Button extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.action = this.action.bind(this);
     }
 
