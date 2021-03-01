@@ -1,10 +1,10 @@
 
 export default class Item {
-    constructor(value, index) {
+    constructor(value, index, disabled = false, active = false) {
         this.id = index;
         this.value = value;
-        this.active = false;
-        this.disabled = this.value ? true : false;
+        this.disabled = disabled;
+        this.active = active;
     }
 
     change(value) {

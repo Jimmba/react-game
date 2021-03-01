@@ -11,8 +11,8 @@ export class Header extends React.Component {
     render() {
         return (
             <header>
-                <h1>Sudoku</h1>
-                <Button className = 'settings' text = 'Settings' functionName='showSettings' game = {this.game} updateState={this.updateState}/>
+                <h1>{this.game.translations.menu.gameName}</h1>
+                <Button className = 'settings' text = {this.game.translations.menu.settingsButton} functionName='showSettings' game = {this.game} updateState={this.updateState}/>
             </header>
         )
     }

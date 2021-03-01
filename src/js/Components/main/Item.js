@@ -25,15 +25,16 @@ export class Item extends React.Component {
     
     render() {
         const classes = ['item'];
-        if (this.props.item.disabled) classes.push('disabled');
         if (this.props.item.active) classes.push('active');
-        
+        //const value = this.state.value ? this.state.value : '';
+        const value = this.props.item.value ? this.props.item.value : '';
         return (
             <input 
-                value={this.state.value ? this.state.value : ''} 
+                value={value}
                 className={classes.join(' ')}
                 onKeyPress={this.changeValue}
                 onChange={this.onChange}
+                disabled={this.props.item.disabled}
             />
         )
     }

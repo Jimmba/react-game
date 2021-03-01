@@ -18,9 +18,11 @@ export default class App extends React.Component {
   }
 
   updateGameState(state) {
+    //console.log('update state', state);
     this.setState({
       game: state
     })
+    this.game.saveGame();
   }
 
   render() {
@@ -29,7 +31,7 @@ export default class App extends React.Component {
       <div className={className}>
         <Settings game = {this.game} updateState={this.updateGameState}/>
         <Header game = {this.game} updateState={this.updateGameState}/>
-        <Main game = {this.game}/>
+        <Main game = {this.game} updateState={this.updateGameState}/>
         <Footer/>
       </div>
     )

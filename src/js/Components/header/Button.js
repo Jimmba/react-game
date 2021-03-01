@@ -5,9 +5,6 @@ export class Button extends React.Component {
         super(props);
         this.action = this.action.bind(this);
         this.game = this.props.game;
-        // this.state = {
-        //     settings: this.game.settings
-        // }
         this.init();
     }
 
@@ -36,8 +33,12 @@ export class Button extends React.Component {
     }
     
     changeTheme() {
-        
         this.game.settings.activeTheme = this.props.className;
+        this.updateState(this.game);
+    }
+
+    resetGame() {
+        this.game.resetGame();
         this.updateState(this.game);
     }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { messages } from '../../data/data';
 import { Item } from './Item';
 
 export class Field extends React.Component {
@@ -16,7 +15,7 @@ export class Field extends React.Component {
     render() {
         return (
             this.game.items.map((el, index) => {
-                return <Item item={el} key={index} changeMessage={this.changeMessage}/>
+                return <Item item={el} key={index} changeMessage={this.changeMessage} game={this.game}/>
             })
         )
     }
