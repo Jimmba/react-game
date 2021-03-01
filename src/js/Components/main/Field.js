@@ -7,7 +7,6 @@ export class Field extends React.Component {
         super(props);
         this.game = this.props.game;
         this.changeMessage=this.props.updateMessage.bind(this);
-        // console.log(this.game);
     }
 
     changeMessage() {

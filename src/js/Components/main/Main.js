@@ -8,11 +8,8 @@ import { messages } from '../../data/data';
 export class Main extends React.Component {
     constructor(props) {
         super(props);
-        this.game = new Game();
+        this.game = this.props.game;
         this.updateMessage = this.updateMessage.bind(this);
-        this.state = {
-            message: messages.default
-        }
     }
 
     updateMessage (key) {
@@ -20,7 +17,6 @@ export class Main extends React.Component {
         this.setState({
             game: this.game
         });
-        console.log(this.game);
     }
 
     render() {

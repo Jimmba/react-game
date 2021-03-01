@@ -1,14 +1,15 @@
 import { field, messages } from "./data";
 import Item from "./Item";
+import Settings from "../data/Settings";
 
 
 export default class Game {
     constructor() {
-        
     this.data = field.data;
     this.result = field.result;
     this.items = [];
     this.message = '';
+    this.settings = new Settings();
     this.init();
     }
 

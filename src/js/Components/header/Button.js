@@ -4,6 +4,21 @@ export class Button extends React.Component {
     constructor(props) {
         super(props);
         this.action = this.action.bind(this);
+        this.game = this.props.game;
+        // this.state = {
+        //     settings: this.game.settings
+        // }
+        this.init();
+    }
+
+    init () {
+        this.showSettings = this.showSettings.bind(this);
+        this.hideSettings = this.hideSettings.bind(this);
+        this.changeTheme = this.changeTheme.bind(this);
+        
+        if (this.props.updateState) {
+            this.updateState = this.props.updateState.bind(this);
+        }
     }
 
     action() {
@@ -11,16 +26,19 @@ export class Button extends React.Component {
     }
     
     showSettings() {
-        document.querySelector('.gameSettings').classList.add('show');
+        this.game.settings.isHidden = false;
+        this.updateState(this.game);
     }
 
     hideSettings() {
-        document.querySelector('.gameSettings').classList.remove('show');
+        this.game.settings.isHidden = true;
+        this.updateState(this.game);
     }
     
     changeTheme() {
-        document.querySelector('.wrapper').classList.remove(document.querySelector('.wrapper').classList[1]);
-        document.querySelector('.wrapper').classList.add(this.props.className);
+        
+        this.game.settings.activeTheme = this.props.className;
+        this.updateState(this.game);
     }
 
     render() {
