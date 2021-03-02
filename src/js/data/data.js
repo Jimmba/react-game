@@ -139,8 +139,8 @@ const field = {
 
 
 const formatTime = (timeInMs) => {
-    const totalSeconds = Math.floor(timeInMs / 1000);   
-    const minutes = Math.floor(totalSeconds / 60);
+    const totalSeconds = Math.round(timeInMs / 1000);   
+    const minutes = Math.round(totalSeconds / 60);
     const seconds = totalSeconds - minutes * 60;
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }

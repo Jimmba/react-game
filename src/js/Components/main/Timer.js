@@ -35,6 +35,7 @@ export class Timer extends React.Component {
     }
 
     render() {
+        // debugger;
         let value = this.state.timer;
         if (!this.game.settings.currentGame.isStarted && this.game.settings.currentGame.isReset) value = 0;
         // console.log(this.game.settings.currentGame.isStarted, this.game.settings.currentGame.isReset, value);

@@ -4,7 +4,9 @@ import Settings from "../data/Settings";
 import Music from "./Music";
 import Sounds from "./Sounds";
 
-const dataToSave = ['data', 'result', 'items', 'settings'];
+const maxStatisticLength = 10;
+
+const dataToSave = ['data', 'result', 'items', 'settings', 'statistics'];
 export default class Game {
     constructor() {
         this.settings = new Settings();
@@ -15,6 +17,7 @@ export default class Game {
         this.items = [];
         this.music = new Music();
         this.sounds = new Sounds();
+        this.statistics = [];
         this.init();
     }
 
@@ -62,6 +65,19 @@ export default class Game {
         return true;
     }
 
+    updateStatistics() {
+        const time = this.settings.currentGame.now-this.settings.currentGame.startGame;
+        const level = this.settings.level;
+        this.statistics.push({time: time, level: level});
+        this.statistics.sort((a, b) => {
+            if (a.time > b.time) return 1;
+            if (a.time == b.time) return 0;
+            return -1;
+        });
+        if (this.statistics.length > maxStatisticLength) this.statistics.length = maxStatisticLength;
+        console.log(this.statistics);
+    }
+
     updateMessage(key) {
         const lang = this.settings.lang;
         if (this.isNotANumber(key)) {
@@ -72,6 +88,7 @@ export default class Game {
         if (this.isGameFinished()) {
             this.message = translations[lang].messages.finished;
             this.settings.currentGame.isStarted = false;
+            this.updateStatistics();
             this.sounds.playVictory();
             return;
         }
