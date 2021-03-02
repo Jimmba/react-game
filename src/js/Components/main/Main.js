@@ -24,9 +24,9 @@ export class Main extends React.Component {
             <div className = 'main'>
                 <div className = 'game'>
                     <Field game={this.game} updateMessage={this.updateMessage}/>
-                    <Button className = 'reset' text = {this.game.translations.menu.resetButton} functionName='resetGame' game = {this.game} updateState={this.updateState}/>
-                    <Message game={this.game}/>
                 </div>
+                <Button className = 'reset' text = {this.game.translations.menu.resetButton} functionName='resetGame' game = {this.game} updateState={this.updateState}/>
+                <Message game={this.game}/>
             </div>
         )
     }

@@ -44,7 +44,7 @@ export class Button extends React.Component {
 
     render() {
         return (
-            <button className = {this.props.class} onClick={this.action}>
+            <button className = {this.props.className} onClick={this.action}>
                 {this.props.text}
             </button>
         )

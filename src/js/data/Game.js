@@ -14,14 +14,13 @@ export default class Game {
         this.init();
     }
 
+    
     newGame() {
         const games = field[this.settings.level];
         const gameNumber = Math.floor(Math.random() * games.length);
         
         this.data = games[gameNumber].data;
         this.result = games[gameNumber].result;
-        // this.data = field[this.settings.level][0].data;
-        // this.result = field[this.settings.level][0].result;
         this.items = [];
     }
 
