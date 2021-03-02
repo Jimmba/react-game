@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../header/Button';
+import { Sound } from '../main/Sound';
 import { ColorsButtons } from './ColorsButtons';
 import { Languages } from './Languages';
 import { Levels } from './Levels';
@@ -18,7 +19,6 @@ export class Settings extends React.Component {
 
     changeLanguage(e) {
         this.game.selectLanguage(e.target.value);
-        console.log(this.game);
         this.updateState(this.game);
     }
 
@@ -55,6 +55,13 @@ export class Settings extends React.Component {
                         <select name='select' onChange={this.changeLevel}>
                             <Levels game={this.props.game}/>
                         </select>
+                    </div>
+                </div>
+                <div className = 'gameSettings-item'>
+                    <h3>{this.translations.menu.textSetLevel}</h3>
+                    <div className = 'gameSettings-sounds'>
+                        <Sound className="music" game={this.props.game} updateState={this.updateState}/>
+                        <Sound className="sound" game={this.props.game} updateState={this.updateState}/>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,11 @@ export class Item extends React.Component {
         super(props);
         this.changeValue = this.changeValue.bind(this);
         this.changeMessage = this.props.changeMessage.bind(this);
+        this.game = this.props.game;
         this.state = {
             value: this.props.item.value,
         }
+        this.playSound = this.playSound.bind(this);
     }
     
     changeValue(e) {
@@ -22,19 +24,28 @@ export class Item extends React.Component {
     onChange() {
         return;
     }
+
+    playSound(isDisabled) {
+        if (isDisabled) {
+            this.game.sounds.playMistake();
+        } else {
+            this.game.sounds.playClick();
+        }
+    }
     
     render() {
         const classes = ['item'];
         if (this.props.item.active) classes.push('active');
-        //const value = this.state.value ? this.state.value : '';
         const value = this.props.item.value ? this.props.item.value : '';
+        const isDisabled = this.props.item.disabled == true ? true : false ;
         return (
             <input 
                 value={value}
                 className={classes.join(' ')}
                 onKeyPress={this.changeValue}
                 onChange={this.onChange}
-                disabled={this.props.item.disabled}
+                disabled={isDisabled}
+                onClick={() => this.playSound(isDisabled)}
             />
         )
     }

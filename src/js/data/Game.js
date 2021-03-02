@@ -1,6 +1,8 @@
 import { field, translations } from "./data";
 import Item from "./Item";
 import Settings from "../data/Settings";
+import Music from "./Music";
+import Sounds from "./Sounds";
 
 const dataToSave = ['data', 'result', 'items', 'settings'];
 export default class Game {
@@ -11,6 +13,8 @@ export default class Game {
         this.data = [];
         this.result = [];
         this.items = [];
+        this.music = new Music();
+        this.sounds = new Sounds();
         this.init();
     }
 
@@ -27,6 +31,7 @@ export default class Game {
     init() {
         if (!this.loadSavedGame()) this.newGame();
         this.loadItems();
+        this.setVolumes();
     }
 
     loadItems() {
@@ -66,6 +71,7 @@ export default class Game {
 
         if (this.isGameFinished()) {
             this.message = translations[lang].messages.finished;
+            this.sounds.playVictory();
             return;
         }
         const index = Math.floor(Math.random() * translations[lang].messages.data.length);
@@ -108,5 +114,19 @@ export default class Game {
         this.items.length = 0;
         this.loadItems();
     }
+    
+    setMusicVolume(value) {
+        this.settings.music.volume = value;
+        this.music.audio.volume = value;
+    }
 
+    setSoundsVolume(value) {
+        this.settings.sounds.volume = value;
+        this.sounds.audio.volume = value;
+    }
+
+    setVolumes(){
+        this.music.audio.volume = this.settings.music.volume;
+        this.sounds.audio.volume = this.settings.sounds.volume;
+    }
 }

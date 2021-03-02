@@ -49,6 +49,8 @@ const translations = {
                     value: 'hard'
                 }
             ],
+            textSetMusic: 'music',
+            textSetSounds: 'sounds',
             resetButton: 'reset game'
         },
         messages: {
@@ -105,6 +107,8 @@ const translations = {
                     value: 'hard'
                 }
             ],
+            textSetMusic: 'музыка',
+            textSetSounds: 'звуки',
             resetButton: 'сбросить'
         },
         

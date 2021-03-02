@@ -20,6 +20,7 @@ export class Button extends React.Component {
 
     action() {
         this.[this.props.functionName]();
+        this.game.sounds.playClick();
     }
     
     showSettings() {
