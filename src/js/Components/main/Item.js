@@ -31,6 +31,10 @@ export class Item extends React.Component {
         } else {
             this.game.sounds.playClick();
         }
+
+        if (!this.game.settings.currentGame.isStarted) {
+            this.game.startGame();
+        }
     }
     
     render() {

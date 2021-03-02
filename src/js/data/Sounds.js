@@ -15,12 +15,12 @@ export default class Sounds {
             victory: victory
         }
     }
+    
 
     toggleMuting() {
         this.isPlaying = true;
         this.isMuted = !this.isMuted;
         this.audio.muted = this.isMuted;
-        console.log(this.isMuted)
     }
 
     setVolume(value = this.defaultValue) {

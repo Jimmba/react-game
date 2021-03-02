@@ -71,6 +71,7 @@ export default class Game {
 
         if (this.isGameFinished()) {
             this.message = translations[lang].messages.finished;
+            this.settings.currentGame.isStarted = false;
             this.sounds.playVictory();
             return;
         }
@@ -112,6 +113,8 @@ export default class Game {
 
     resetGame() {
         this.items.length = 0;
+        this.settings.currentGame.isStarted = false;
+        this.settings.currentGame.isReset = true;
         this.loadItems();
     }
     
@@ -128,5 +131,11 @@ export default class Game {
     setVolumes(){
         this.music.audio.volume = this.settings.music.volume;
         this.sounds.audio.volume = this.settings.sounds.volume;
+    }
+
+    startGame() {
+        this.settings.currentGame.isStarted = true;
+        this.settings.currentGame.isReset = false;
+        this.settings.currentGame.startGame = Date.now();
     }
 }

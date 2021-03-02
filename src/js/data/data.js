@@ -51,7 +51,8 @@ const translations = {
             ],
             textSetMusic: 'music',
             textSetSounds: 'sounds',
-            resetButton: 'reset game'
+            resetButton: 'reset game',
+            timerTitle: 'game time'
         },
         messages: {
             default: 'Select field and enter number',
@@ -109,7 +110,8 @@ const translations = {
             ],
             textSetMusic: 'музыка',
             textSetSounds: 'звуки',
-            resetButton: 'сбросить'
+            resetButton: 'сбросить',
+            timerTitle: 'игровое время'
         },
         
         messages: {
@@ -135,4 +137,12 @@ const field = {
     hard: hard
 }
 
-export { footer, themes, field, translations};
+
+const formatTime = (timeInMs) => {
+    const totalSeconds = Math.floor(timeInMs / 1000);   
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds - minutes * 60;
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+export { footer, themes, field, translations, formatTime};

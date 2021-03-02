@@ -17,7 +17,6 @@ export default class App extends React.Component {
   }
 
   updateGameState(state) {
-    //console.log('update state', state);
     this.setState({
       game: state
     })

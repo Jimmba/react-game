@@ -1,3 +1,4 @@
+import CurrentGame from "./CurrentGame";
 import { translations, themes } from "./data"
 export default class Settings {
     constructor (){
@@ -13,5 +14,7 @@ export default class Settings {
         this.sounds = {
             volume: 0.5,
         }
+
+        this.currentGame = new CurrentGame();
     }
 }

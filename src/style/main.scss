@@ -1,7 +1,30 @@
 .main {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+
+    &-game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-timer{ 
+        width: 200px;
+        color: white;
+
+        h2 {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .time {
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
 
 .game {
