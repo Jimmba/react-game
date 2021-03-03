@@ -30,7 +30,10 @@ export class Main extends React.Component {
                         <div className = 'game'>
                             <Field game={this.game} updateMessage={this.updateMessage}/>
                         </div>
-                        <Button className = 'reset' text = {this.game.translations.menu.resetButton} functionName='resetGame' game = {this.game} updateState={this.updateState}/>
+                        <div className = 'game-buttons'>
+                            <Button className = 'reset' text = {this.game.translations.menu.resetButton} functionName='resetGame' game = {this.game} updateState={this.updateState}/>
+                            <Button className = 'newGame' text = {this.game.translations.menu.newGameButton} functionName='newGame' game = {this.game} updateState={this.updateState}/>
+                        </div>
                         <Message game={this.game}/>
                         <Button className = 'closeFullScreen' text = {this.game.translations.menu.backButton} functionName='closeFullScreen' game = {this.game} updateState={this.updateState}/>
                     </div>

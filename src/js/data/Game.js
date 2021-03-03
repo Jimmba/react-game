@@ -106,6 +106,11 @@ export default class Game {
         this.message = translations[this.settings.lang].messages.default;
     }
 
+    startNewGame() {
+        this.newGame();
+        this.loadItems();
+    }
+
     selectLevel(level) {
         this.settings.level = level;
         this.newGame();

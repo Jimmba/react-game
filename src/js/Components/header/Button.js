@@ -12,6 +12,7 @@ export class Button extends React.Component {
         this.showSettings = this.showSettings.bind(this);
         this.hideSettings = this.hideSettings.bind(this);
         this.changeTheme = this.changeTheme.bind(this);
+        this.newGame = this.newGame.bind(this);
         
         if (this.props.updateState) {
             this.updateState = this.props.updateState.bind(this);
@@ -67,6 +68,11 @@ export class Button extends React.Component {
         this.game.isFullScreen = false;
         this.updateState(this.game);
         document.exitFullscreen();
+    }
+
+    newGame() {
+        this.game.startNewGame();
+        this.updateState(this.game);
     }
 
     render() {

@@ -13,7 +13,7 @@ const translations = {
         menu: {
             gameName: 'Sudoku',
             settingsButton: 'settings',
-            closeButton: 'Close',
+            closeButton: 'close',
             textSetBackground: 'Set overlay\'s color',
             themesButtons: [
                 {
@@ -29,9 +29,9 @@ const translations = {
                     'className': 'blue'
                 },
             ],
-            statisticsButton: 'Statistic',
-            fullScreenButton: 'Full Screen',
-            backButton: 'Back',
+            statisticsButton: 'statistic',
+            fullScreenButton: 'full screen',
+            backButton: 'back',
             textSetLanguage: 'Change language',
             textSetLevel: 'Level',
             statistics: {
@@ -60,6 +60,7 @@ const translations = {
             textSetMusic: 'music',
             textSetSounds: 'sounds',
             resetButton: 'reset game',
+            newGameButton: 'new game',
             timerTitle: 'game time'
         }, 
         hotKeys: {
@@ -152,6 +153,7 @@ const translations = {
             textSetMusic: 'музыка',
             textSetSounds: 'звуки',
             resetButton: 'сбросить',
+            newGameButton: 'новая игра',
             timerTitle: 'игровое время'
         }, 
         hotKeys: {
