@@ -10,7 +10,7 @@ export class Levels extends React.Component {
         this.lang = this.props.game.settings.lang;
         this.levels = translations[this.lang].menu.levels;
         return this.levels.map((el, index) => {
-            return <option value = {el.value} key = {index} selected = {el.value === this.props.game.settings.level ? true : false}>{el.level}</option>
+            return <option value = {el.value} key = {index} >{el.level}</option>
         })  
     }
 }

@@ -4,6 +4,8 @@ $bg-blue: blue;
 $bg-gray: #cccccc;
 $text-white: #ffffff;
 
+$bg-opacity: 0.05;
+$blocks-opacity: 0.7;
 
 @mixin transparentBackground ($rgbColor, $opacity) {
     background-color: rgba($rgbColor, $opacity);

@@ -18,6 +18,8 @@ export default class Game {
         this.music = new Music();
         this.sounds = new Sounds();
         this.statistics = [];
+        this.isHiddenStatistics = true;
+        this.isFullScreen = false;
         this.init();
     }
 
@@ -25,6 +27,8 @@ export default class Game {
     newGame() {
         const games = field[this.settings.level];
         const gameNumber = Math.floor(Math.random() * games.length);
+        this.settings.currentGame.isStarted = false;
+        this.settings.currentGame.isReset = true;
         
         this.data = games[gameNumber].data;
         this.result = games[gameNumber].result;

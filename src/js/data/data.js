@@ -29,8 +29,16 @@ const translations = {
                     'className': 'blue'
                 },
             ],
+            statisticsButton: 'Statistic',
+            fullScreenButton: 'Full Screen',
+            backButton: 'Back',
             textSetLanguage: 'Change language',
             textSetLevel: 'Level',
+            statistics: {
+                title : 'Top 10',
+                time: 'Time',
+                level: 'Level'
+            },
             levels: [
                 {
                     level: 'mega easy',
@@ -59,7 +67,7 @@ const translations = {
             data: [
                 'Great, try another',
                 'Ok, try another',
-                'There are still empty fields. Go on',
+                'You can solve the puzzle!',
                 'You\'re doing well'
             ],
             mistakes: {
@@ -88,8 +96,16 @@ const translations = {
                     'className': 'blue'
                 },
             ],
+            statisticsButton: 'Статистика',
+            fullScreenButton: 'Развернуть',
+            backButton: 'Свернуть',
             textSetLanguage: 'Язык',
             textSetLevel: 'Сложность',
+            statistics: {
+                title : 'Топ 10',
+                time: 'Время',
+                level: 'Уровень'
+            },
             levels: [
                 {
                     level: 'супер легкий',
@@ -119,7 +135,7 @@ const translations = {
             data: [
                 'Отлично! Заполните другое поле',
                 'Замечательно! Продолжайте!',
-                'Не все поля еще заполнены. Продолжайте.',
+                'Вы сможете решить головоломку!',
                 'У вас неплохо получается'
             ],
             mistakes: {
@@ -139,8 +155,8 @@ const field = {
 
 
 const formatTime = (timeInMs) => {
-    const totalSeconds = Math.round(timeInMs / 1000);   
-    const minutes = Math.round(totalSeconds / 60);
+    const totalSeconds = Math.floor(timeInMs / 1000);   
+    const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds - minutes * 60;
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }

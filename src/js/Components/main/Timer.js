@@ -41,7 +41,7 @@ export class Timer extends React.Component {
         // console.log(this.game.settings.currentGame.isStarted, this.game.settings.currentGame.isReset, value);
         // console.log(value);
         return (
-            <div className = 'main-timer'>
+            <div className = 'main-info--timer'>
                 <h2>{translations[this.game.settings.lang].menu.timerTitle}</h2>
                 <div className='time'>{formatTime(value)}</div>
             </div>

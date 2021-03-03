@@ -5,6 +5,7 @@ import { Main } from './main/Main';
 import { Footer } from './footer/Footer';
 import { Settings } from './settings/settings';
 import Game from '../data/Game';
+import { Statistics } from './main/Statistics';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -23,15 +24,20 @@ export default class App extends React.Component {
     this.game.saveGame();
   }
 
+  keyUp(e) {
+    console.log('up', e.key);
+  }
+
   render() {
-    const className = `wrapper ${this.game.settings.activeTheme}`;
+    const className = `${this.game.settings.activeTheme}`;
     return (
-      <div className={className}>
+      <main className={className}>
         <Settings game = {this.game} updateState={this.updateGameState}/>
+        <Statistics game = {this.game} updateState={this.updateGameState}/>
         <Header game = {this.game} updateState={this.updateGameState}/>
         <Main game = {this.game} updateState={this.updateGameState}/>
         <Footer/>
-      </div>
+      </main>
     )
   }
 }

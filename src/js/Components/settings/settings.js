@@ -28,40 +28,47 @@ export class Settings extends React.Component {
     }
 
     render() {
-        const className = this.props.game.settings.isHidden ? 'gameSettings' : 'gameSettings show';
+        const className = this.props.game.settings.isHidden ? 'menu gameSettings' : 'menu gameSettings show';
         this.translations = this.game.translations;
+        
         return (
             <div className = {className}>
-                <div className = 'gameSettings-item'>
+                <div className = 'menu-item'>
                     <Button className='close' text = {this.translations.menu.closeButton} functionName='hideSettings' game={this.props.game} updateState={this.updateState}/>
                 </div>
-                <div className = 'gameSettings-item'>
+                <div className = 'menu-item'>
                     <h3>{this.translations.menu.textSetBackground}</h3>
-                    <div className = 'gameSettings-colors--buttons'>
+                    <div className = 'menu-item--buttons'>
                         <ColorsButtons game={this.props.game} updateState={this.updateState}/>
                     </div>
                 </div>
-                <div className = 'gameSettings-item'>
+                <div className = 'menu-item'>
                     <h3>{this.translations.menu.textSetLanguage}</h3>
-                    <div className = 'gameSettings-colors--buttons'>
-                        <select name='select' onChange={this.changeLanguage}>
+                    <div className = 'menu-item--select'>
+                        <select name='select' onChange={this.changeLanguage} defaultValue = {this.props.game.settings.lang}>
                             <Languages game={this.props.game}/>
                         </select>
                     </div>
                 </div>
-                <div className = 'gameSettings-item'>
+                <div className = 'menu-item'>
                     <h3>{this.translations.menu.textSetLevel}</h3>
-                    <div className = 'gameSettings-colors--buttons'>
-                        <select name='select' onChange={this.changeLevel}>
+                    <div className = 'menu-item--select'>
+                        <select name='select' onChange={this.changeLevel} defaultValue = {this.props.game.settings.level}>
                             <Levels game={this.props.game}/>
                         </select>
                     </div>
                 </div>
-                <div className = 'gameSettings-item'>
+                <div className = 'menu-item'>
                     <h3>{this.translations.menu.textSetLevel}</h3>
-                    <div className = 'gameSettings-sounds'>
+                    <div className = 'menu-sounds'>
                         <Sound className="music" game={this.props.game} updateState={this.updateState}/>
                         <Sound className="sound" game={this.props.game} updateState={this.updateState}/>
+                    </div>
+                </div>
+                <div className = 'menu-item'>
+                    <h3>FULLSCREEN</h3>
+                    <div className = 'menu-item'>
+                        <Button className='fullScreen' text = {this.translations.menu.fullScreenButton} functionName='openFullScreen' game={this.props.game} updateState={this.updateState}/>
                     </div>
                 </div>
             </div>

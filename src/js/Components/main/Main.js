@@ -22,15 +22,21 @@ export class Main extends React.Component {
 
     render() {
         return (
-            <div className = 'main'>
-                <div className = 'main-game'>
-                    <div className = 'game'>
-                        <Field game={this.game} updateMessage={this.updateMessage}/>
+            <div className = 'main' id = 'game'>
+                <div className = 'wrapper'>
+                    <div className = 'main-game'>
+                        <div className = 'game'>
+                            <Field game={this.game} updateMessage={this.updateMessage}/>
+                        </div>
+                        <Button className = 'reset' text = {this.game.translations.menu.resetButton} functionName='resetGame' game = {this.game} updateState={this.updateState}/>
+                        <Message game={this.game}/>
                     </div>
-                    <Button className = 'reset' text = {this.game.translations.menu.resetButton} functionName='resetGame' game = {this.game} updateState={this.updateState}/>
-                    <Message game={this.game}/>
+                    <div className='main-info'>
+                        <Timer game={this.game} updateState={this.updateState}/>
+                        <Button className = 'statistics' text = {this.game.translations.menu.statisticsButton} functionName='showStatistics' game = {this.game} updateState={this.updateState}/>
+                    </div>
+                    <Button className = 'closeFullScreen' text = {this.game.translations.menu.backButton} functionName='closeFullScreen' game = {this.game} updateState={this.updateState}/>
                 </div>
-                <Timer game={this.game} updateState={this.updateState}/>
             </div>
         )
     }

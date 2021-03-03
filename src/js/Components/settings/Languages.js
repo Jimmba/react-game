@@ -9,7 +9,7 @@ export class Languages extends React.Component {
 
     render() {
         return this.languages.map((el, index) => {
-            return <option value = {el} key = {index} selected = {el === this.props.game.settings.lang ? true : false}>{el}</option>
+            return <option value = {el} key = {index}>{el}</option>
         })  
     }
 }

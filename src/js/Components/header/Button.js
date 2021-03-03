@@ -33,6 +33,7 @@ export class Button extends React.Component {
         this.updateState(this.game);
     }
     
+    
     changeTheme() {
         this.game.settings.activeTheme = this.props.className;
         this.updateState(this.game);
@@ -43,9 +44,33 @@ export class Button extends React.Component {
         this.updateState(this.game);
     }
 
+    showStatistics() {
+        this.game.isHiddenStatistics = false;
+        this.updateState(this.game);
+    }
+
+    hideStatistics() {
+        this.game.isHiddenStatistics = true;
+        this.updateState(this.game);
+    }
+
+    openFullScreen() {
+        this.game.isFullScreen = true;
+        this.updateState(this.game);
+        const game = document.getElementById('game');
+        game.requestFullscreen();
+    }
+
+    closeFullScreen() {
+        this.game.isFullScreen = false;
+        this.updateState(this.game);
+        document.exitFullscreen();
+    }
+
     render() {
+        const className = (this.props.className == 'closeFullScreen' && this.game.isFullScreen == false) ? 'fullscreen hidden' : this.props.className;
         return (
-            <button className = {this.props.className} onClick={this.action}>
+            <button className = {className} onClick={this.action}>
                 {this.props.text}
             </button>
         )
