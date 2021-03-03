@@ -1,6 +1,7 @@
 import React from 'react';
 import soundOn from '../../../images/soundOn.png'
 import soundOff from '../../../images/soundOff.png'
+import { translations } from '../../data/data';
 
 const volumeDelimiter = 100;
 
@@ -24,7 +25,6 @@ export class Sound extends React.Component {
 
 
     playToggle(name) {
-        //debugger;
         if (name === 'music') {
             this.game.music.togglePlaying();
         } else {
@@ -41,13 +41,11 @@ export class Sound extends React.Component {
         if (this.props.game[typeAudio].isPlaying === true && this.props.game[typeAudio].isMuted === false) {
             isMusicOn = true;
         }
-
         const icon = isMusicOn ? soundOn : soundOff;
         const defaultValue = this.props.game.settings[typeAudio].volume * volumeDelimiter;
-
         return (
             <div className = "audio">
-                <label htmlFor={className}>{className}</label>
+                <label htmlFor={className}>{this.props.text}</label>
                 <img className = "sounds" src = {icon} onClick={(e) => {this.playToggle(typeAudio)}}></img>
                 <input 
                     type = "range" 

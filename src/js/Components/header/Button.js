@@ -25,6 +25,7 @@ export class Button extends React.Component {
     
     showSettings() {
         this.game.settings.isHidden = false;
+        this.game.isHiddenStatistics = true;
         this.updateState(this.game);
     }
 
@@ -46,6 +47,7 @@ export class Button extends React.Component {
 
     showStatistics() {
         this.game.isHiddenStatistics = false;
+        this.game.settings.isHidden = true;
         this.updateState(this.game);
     }
 

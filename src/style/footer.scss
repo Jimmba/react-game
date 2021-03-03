@@ -1,6 +1,9 @@
 footer {
 
     font-weight: bold;
+    .year {
+        color: $text-white;
+    }
 
     img {
         &.git {

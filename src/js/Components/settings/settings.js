@@ -61,12 +61,11 @@ export class Settings extends React.Component {
                 <div className = 'menu-item'>
                     <h3>{this.translations.menu.textSetLevel}</h3>
                     <div className = 'menu-sounds'>
-                        <Sound className="music" game={this.props.game} updateState={this.updateState}/>
-                        <Sound className="sound" game={this.props.game} updateState={this.updateState}/>
+                        <Sound className="music" text = {this.translations.menu.textSetMusic} game={this.props.game} updateState={this.updateState}/>
+                        <Sound className="sound" text = {this.translations.menu.textSetSounds} game={this.props.game} updateState={this.updateState}/>
                     </div>
                 </div>
                 <div className = 'menu-item'>
-                    <h3>FULLSCREEN</h3>
                     <div className = 'menu-item'>
                         <Button className='fullScreen' text = {this.translations.menu.fullScreenButton} functionName='openFullScreen' game={this.props.game} updateState={this.updateState}/>
                     </div>

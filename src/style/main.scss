@@ -1,6 +1,5 @@
 
 @import './variables.scss';
-$backgroundGray: rgba(200, 200, 200, 0.9);
 
 .wrapper {
     display: flex;
@@ -49,28 +48,29 @@ $backgroundGray: rgba(200, 200, 200, 0.9);
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include transparentBackground($backgroundGray, $blocks-opacity);
-        height: 200px;
+        @include transparentBackground($bg-main, $blocks-opacity);
+        height: 270px;
+        color: $text-white;
 
         @media screen and (max-width: 767px) {
             height: 110px;
         }
+
+        h2 {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-align: center;
+        }
         
         &--timer{ 
             width: 200px;
-            color: white;
-            margin: 20px;
+            margin: 10px;
             
             @media screen and (max-width: 767px) {
                 margin: 5px;
             }
             
-            h2 {
-                font-size: 20px;
-                text-transform: uppercase;
-                margin-bottom: 10px;
-                text-align: center;
-            }
             
             .time {
                 width: 100%;
@@ -78,6 +78,30 @@ $backgroundGray: rgba(200, 200, 200, 0.9);
                 font-size: 28px;
             }
         }
+        &--keys {
+            width:100%;
+            margin-bottom: 20px;
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.hotKeyItem {
+    display: flex;
+    font-size: 14px;
+    
+    .key {
+        width: 30px;
+        margin-right: 10px;
+        text-align: end;
+        font-weight: bold;
+    }
+
+    .description {
+        letter-spacing: 1.2px;
+        
     }
 }
 
@@ -117,12 +141,11 @@ $backgroundGray: rgba(200, 200, 200, 0.9);
 
         &:focus {
             border: 0px solid $text-white;
-            transform: scale(1.1) ;
-            // @include transparentBackground($text-white, 0.2);
+            transform: scale(1.5) ;
         }
 
         &[disabled] {
-            background: $backgroundGray;
+            background: $bg-gray;
             &:hover {
                 cursor: default;
             }
@@ -145,6 +168,7 @@ $backgroundGray: rgba(200, 200, 200, 0.9);
     padding: 10px;
     border-radius: 3px;
     text-align: center;
+    margin-bottom: 10px;
 
     @media screen and (max-width: 767px) {
         font-size: 12px;
@@ -167,8 +191,9 @@ $backgroundGray: rgba(200, 200, 200, 0.9);
 .menu {
     position: absolute;
     width: 50%;
+    max-width: 400px;
     height: 100vh;
-    background-color: #939699;
+    background-color: $bg-main;
     right: 0;
     z-index: 1;
     right: -50%;

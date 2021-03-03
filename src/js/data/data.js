@@ -14,7 +14,7 @@ const translations = {
             gameName: 'Sudoku',
             settingsButton: 'settings',
             closeButton: 'Close',
-            textSetBackground: 'Set background color',
+            textSetBackground: 'Set overlay\'s color',
             themesButtons: [
                 {
                     'description': 'red',
@@ -61,6 +61,31 @@ const translations = {
             textSetSounds: 'sounds',
             resetButton: 'reset game',
             timerTitle: 'game time'
+        }, 
+        hotKeys: {
+            title: "Hot Keys",
+            values: [
+                {
+                    button: 'm',
+                    description: 'mute/unmute music'
+                },
+                {
+                    button: 's',
+                    description: 'mute/unmute sounds'
+                },
+                {
+                    button: 'r',
+                    description: 'reset game'
+                },
+                {
+                    button: 't',
+                    description: 'show/hide statistic'
+                },
+                {
+                    button: 'e',
+                    description: 'show/hide settings'
+                },
+            ]
         },
         messages: {
             default: 'Select field and enter number',
@@ -81,7 +106,7 @@ const translations = {
             gameName: 'Судоку',
             settingsButton: 'Настройки',
             closeButton: 'Закрыть',
-            textSetBackground: 'Выбрать цвет фона',
+            textSetBackground: 'Выбрать цвет оверлея',
             themesButtons: [
                 {
                     'description': 'красный',
@@ -128,8 +153,32 @@ const translations = {
             textSetSounds: 'звуки',
             resetButton: 'сбросить',
             timerTitle: 'игровое время'
+        }, 
+        hotKeys: {
+            title: "Hot Keys",
+            values: [
+                {
+                    button: 'm',
+                    description: 'Включить/выключить музыку'
+                },
+                {
+                    button: 's',
+                    description: 'Включить/выключить звуки'
+                },
+                {
+                    button: 'r',
+                    description: 'сбросить игру'
+                },
+                {
+                    button: 't',
+                    description: 'показать/скрыть статистику'
+                },
+                {
+                    button: 'e',
+                    description: 'показать/скрыть настройки'
+                },
+            ]
         },
-        
         messages: {
             default: 'Выберите поле и введите число',
             data: [

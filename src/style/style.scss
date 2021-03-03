@@ -46,7 +46,7 @@ main {
 
 header, footer {
     width: 100%;
-    @include transparentBackground($bg-gray, $blocks-opacity);
+    @include transparentBackground($bg-main, $blocks-opacity);
 }
 
 header {

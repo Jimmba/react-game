@@ -15,6 +15,7 @@ export default class App extends React.Component {
       game: this.game
     }
     this.updateGameState = this.updateGameState.bind(this);
+    this.checkHotKeys = this.checkHotKeys.bind(this);
   }
 
   updateGameState(state) {
@@ -22,6 +23,34 @@ export default class App extends React.Component {
       game: state
     })
     this.game.saveGame();
+  }
+
+  checkHotKeys(e) {
+    if (e.key === 'm') {
+      this.game.music.togglePlaying();
+    }
+    if (e.key === 's') {
+      this.game.sounds.toggleMuting();
+    }
+    if (e.key === 'r') {
+      this.game.resetGame();
+      this.updateGameState(this.game);
+    }
+    if (e.key === 't') {
+      this.game.isHiddenStatistics = !this.game.isHiddenStatistics;
+      this.game.settings.isHidden = true;
+      this.updateGameState(this.game);
+    }
+    if (e.key === 'e') {
+      this.game.settings.isHidden = !this.game.settings.isHidden;
+      this.game.isHiddenStatistics = true;
+      this.updateGameState(this.game);
+    }
+  }
+  
+
+  componentDidMount() {
+    window.onkeydown = this.checkHotKeys;
   }
 
   keyUp(e) {
