@@ -1,0 +1,12 @@
+header {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    
+    h1 {
+        font-size: 24px;
+        text-transform: uppercase;
+        color: $text-white;
+    }
+}
